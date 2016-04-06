@@ -21,7 +21,7 @@ class virtual_world:
 		self.step += 1
 
 	#draw world matrix
-	def draw(self):
+	def draw(self, screen):
 		for x in xrange(self.width):
 			for y in xrange(self.height):
 				if self.data[x][y] == 0: pygame.draw.rect(screen, (100, 100, 100), (x*16, y*16, 16, 16))

@@ -13,12 +13,12 @@ width = 800
 height = 600
 screen = pygame.display.set_mode((width, height))
 turbo = False
-world = virtual_world(32, 32)
+world = World.virtual_world(32, 32)
 foodspawn = 0
 foodfreq = 3
 spikespawn = 0
 spikefreq = 3
-agent = ai.IntelligentAgent(2048, 0.01, 0.8, 0.9) 
+agent = ai.IntelligentAgent(5000, 0.01, 0.8, 0.9) 
 agent_x = random.randint(0, world.width-1)
 agent_y = random.randint(0, world.height-1)
 reward = 0.0
@@ -157,7 +157,7 @@ while 1:
 	screen.fill((0, 0, 0))
 
 	#Draw the virtual world
-	world.draw()
+	world.draw(screen)
 
 	#Draw info
 	draw_text("Informations:", world.width*16 + 16, 16*0 + 1)
